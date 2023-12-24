@@ -10,7 +10,7 @@ def browser_history(operations:int, history:str = []):
     
     while i < operations:
          if history[i] == "forward":
-             if history[i] != "back" and history[i] !="forward":
+             if history[i+1] != "back" and history[i+1] !="forward":
                 temp_history.append(history[i+1])
              i = i + 2
          elif history[i] == "back":
@@ -31,6 +31,6 @@ def browser_history(operations:int, history:str = []):
 
 
 #Test
-operations = 7
-history = ["profiles", "users", "forward", "back", "access", "check", "back" ]
+operations = 6
+history = ["profiles", "users", "forward", "back", "access", "check", "forward" ]
 print(browser_history(operations,history))
