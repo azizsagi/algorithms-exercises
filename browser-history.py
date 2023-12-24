@@ -1,5 +1,6 @@
 # Coding exercise
 # Browser history with Forward and Back 
+# Using STACK Append and POP - LIFO approach 
 
 def browser_history(operations:int, history:str = []):
     
