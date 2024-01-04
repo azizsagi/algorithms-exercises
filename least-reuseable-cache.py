@@ -2,8 +2,7 @@ from collections import OrderedDict
  
  
 class LRUCache:
-    """
-    This is alternative implementation of LRU cache based on OrderedDict
+    """    Implementation of LRU cache based on OrderedDict
     """
     capacity: int
     cache_map: OrderedDict
