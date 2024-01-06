@@ -2,8 +2,6 @@ from collections import OrderedDict
  
  
 class LRUCache:
-    """    Implementation of LRU cache based on OrderedDict
-    """
     capacity: int
     cache_map: OrderedDict
  
