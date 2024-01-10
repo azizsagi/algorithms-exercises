@@ -21,6 +21,6 @@ def check_monotonic(nums):
 
 # Output
 print(check_monotonic([1, 2, 2]))
-print(check_monotonic([1, 2, 9,7,5]))
+print(check_monotonic([1, 2, 9, 7, 5]))
 print(check_monotonic([1, 2, 3]))
 print(check_monotonic([3, 5, 1]))
