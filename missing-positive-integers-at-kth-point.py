@@ -1,14 +1,43 @@
-# two inputs
-# Find missing positive integers as Kth point
+# Follow the steps below to solve the problem:
 
-nums = [2,3,4,7,11] #input
-k = 3  #input
-positive_number = 1
-missing_nums = [] # Range from 1 to 1000
+# Traverse the array, Ignore the elements which are greater than N and less than 1.
+# While traversing, check if a[i] ? a[a[i]-1] holds true or not .
+# If the above condition is true then swap a[i] and a[a[i] – 1]  and swap until (a[i] ? a[a[i] – 1]) condition fails.
+# Traverse the array and check whether a[i] ? i + 1 then return i + 1.
+# If all are equal to its index then return N+1.
 
-while positive_number <= 1000:
-    if positive_number not in nums:
-        missing_nums.append(positive_number)
-    positive_number = positive_number + 1
 
-print("Missing number is ", missing_nums[k-1])
+# Python program for the above approach
+ 
+ 
+# Function for finding the first
+# missing positive number
+def firstMissingPositive(arr, n):
+ 
+    # Loop to traverse the whole array
+    for i in range(n):
+ 
+        # Loop to check boundary
+        # condition and for swapping
+        while (arr[i] >= 1 and arr[i] <= n
+               and arr[i] != arr[arr[i] - 1]):
+            temp = arr[i]
+            arr[i] = arr[arr[i] - 1]
+            arr[temp - 1] = temp
+ 
+    # Checking any element which
+    # is not equal to i + 1
+    for i in range(n):
+        if (arr[i] != i + 1):
+            return i + 1
+ 
+    # Nothing is present return last index
+    return n + 1
+ 
+ 
+# Driver code
+if __name__ == '__main__':
+    arr = [1,2,3,5,7,200,256,25666]
+    n = len(arr)
+    ans = firstMissingPositive(arr, n)
+    print(ans)
