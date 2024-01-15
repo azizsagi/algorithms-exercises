@@ -24,7 +24,7 @@ def is_valid_paran(s: str):
 
 
 #Examples
-print(is_valid_paran("[{()}]"))
+print(is_valid_paran("()"))
 print(is_valid_paran("[{}]"))
 print(is_valid_paran("[{()}"))
 print(is_valid_paran("[{(}]"))
